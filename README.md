@@ -1,6 +1,6 @@
 # system-tui
 
-> Pointing an agent at this repo? Have it follow [INSTALL.md](INSTALL.md); it installs as `system-chewy`.
+> Pointing an agent at this repo? Have it follow [INSTALL.md](INSTALL.md); it installs as `system-tui`.
 
 `monitor` — ratatui system dashboard: CPU (global + per-core), RAM/swap, memory by process, disks, disk usage by project, Claude sessions (context size + what each is working on), per-process network (via `nettop`), Claude plan usage, clock. Keeps the Mac awake while it runs (`caffeinate -dimsu -w <pid>`).
 

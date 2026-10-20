@@ -1,6 +1,6 @@
 # Install (for agents)
 
-You are installing `system-chewy`: a macOS terminal dashboard (CPU, memory, memory by process, storage, disk by project, network, Claude sessions, Claude plan usage) that keeps the Mac awake while it runs. Do these steps in order. Ask the user before changing anything in `~/.claude/`.
+You are installing `system-tui`: a macOS terminal dashboard (CPU, memory, memory by process, storage, disk by project, network, Claude sessions, Claude plan usage) that keeps the Mac awake while it runs. Do these steps in order. Ask the user before changing anything in `~/.claude/`.
 
 ## 1. Check prerequisites
 
@@ -12,16 +12,16 @@ You are installing `system-chewy`: a macOS terminal dashboard (CPU, memory, memo
 
 `src/main.rs` has `const PROJECT_ROOT: &str = "Documents/Lhava";` (relative to `$HOME`). Ask the user where they keep their code and set it to that path (e.g. `"code"` for `~/code`). If they don't care, leave it; the panel just stays empty.
 
-## 3. Build and install under the `system-chewy` name
+## 3. Build and install under the `system-tui` name
 
 From the repo root:
 
 ```sh
 cargo install --path .
-ln -sf "$HOME/.cargo/bin/monitor" "$HOME/.cargo/bin/system-chewy"
+ln -sf "$HOME/.cargo/bin/monitor" "$HOME/.cargo/bin/system-tui"
 ```
 
-The crate builds a binary called `monitor`; the symlink gives it the `system-chewy` name. Confirm with `command -v system-chewy`. If `~/.cargo/bin` isn't on PATH, tell the user to add it.
+The crate builds a binary called `monitor`; the symlink gives it the `system-tui` name. Confirm with `command -v system-tui`. If `~/.cargo/bin` isn't on PATH, tell the user to add it.
 
 ## 4. Feed the CLAUDE usage panel (optional)
 
@@ -47,4 +47,4 @@ Without this step everything else works; the CLAUDE panel shows "no usage cached
 
 ## 5. Done
 
-Tell the user: run `system-chewy`, `q`/`esc` quits. The panel fills once a Claude Code session is open.
+Tell the user: run `system-tui`, `q`/`esc` quits. The panel fills once a Claude Code session is open.
